@@ -20,8 +20,13 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+//Route::get('/home', function()
+//{
+  //return dd(app());
+//});
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/register', 'Auth\RegisterController@register');
 Route::post('/register', 'Auth\RegisterController@register');
@@ -38,6 +43,3 @@ Route::get('/search','UsersController@index');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
-
-
-
