@@ -51,8 +51,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'username' => 'required|string|max:255',
             'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
-        ]);
+            'password' => 'required:password_confirmation|alpha_num|min:4|same:password_confirmation',
+            'password_confirmation' => 'alpha_num|min:4',
+        ])->validate();
     }
 
     /**
@@ -78,9 +79,11 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
-
+            $this->validator($data);
             $this->create($data);
-            return redirect('added');
+
+            $username = $request->input('username');
+            return view('auth.added', compact('username'));
         }
         return view('auth.register');
     }
