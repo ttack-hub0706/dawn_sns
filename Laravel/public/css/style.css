@@ -1,22 +1,89 @@
 @charset "utf-8";
-html{
+html {
 }
-body{
+body {
 }
 /* header */
-header{
-    background:#3C4767;
+header {
+  background: #3c4767;
+}
+a {
+  color: black;
+}
+#head {
+  display: flex;
+  justify-content: space-between;
+}
+/* main content */
+#row {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+}
+#container {
+  flex: 0 0 80%;
+}
+#side-bar {
+  flex: 0 0 19%;
+  border-left: 1px solid #6c6c6c;
+}
+#head_user {
+  display: inline-flex;
+  margin: 0 30px;
+}
+.img_logout {
+  margin: 0 10px;
+}
+.head_user_name {
+  color: white;
+}
+.ac_btn {
+  background-color: white;
+  /* display: none; */
+}
+.users_img {
+  border-radius: 50%; /* 角丸半径を50%にする(=円形にする) */
+  width: 50px; /* ※縦横を同値に */
+  height: 50px; /* ※縦横を同値に */
+}
+#syncer-acdn {
+  display: none;
+}
+.active {
+  display: block;
+  border: 1px solid black;
+}
+.btn {
+  /* border: 1px solid #3c4767; */
+  border-radius: 5px;
+  text-align: center;
+  background-color: #3c4767;
+  padding: 10px;
+}
+.btn_a {
+  text-decoration: none;
+  color: white;
 }
 
-/* main content */
-#row{
-    display: flex;
-    flex-flow: row wrap;
+.arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(-45deg);
 }
-#container{
-    flex: 0 0 80%;
+.arrow_box {
+  width: 1.5rem;
+  height: 1.5rem;
 }
-#side-bar{
-    flex: 0 0 19%;
-    border-left: 1px solid #6C6C6C;
+.arrow_active {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(135deg);
 }

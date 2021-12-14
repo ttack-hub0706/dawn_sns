@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "doctrine/dbal": "2.*",
         "fideloper/proxy": "~3.3",
         "kylekatarnls/laravel-carbon-2": "^1.0.0",
         "laravel/framework": "5.5.*",

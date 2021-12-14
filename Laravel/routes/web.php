@@ -20,10 +20,7 @@
 
 
 //ログアウト中のページ
-//Route::get('/home', function()
-//{
-  //return dd(app());
-//});
+Route::get('/top','FollowsController@showFollowId');
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout');
