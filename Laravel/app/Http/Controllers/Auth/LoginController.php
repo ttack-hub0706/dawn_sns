@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use App\Follow;
+use App\User;
+
 
 class LoginController extends Controller
 {
@@ -46,6 +49,7 @@ class LoginController extends Controller
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと
             if(Auth::attempt($data)){
+
                 return redirect('/top');
             }
         }
@@ -54,7 +58,7 @@ class LoginController extends Controller
 
     public function logout(Request $request){
         Auth::logout();
-        $request->session()->flush();
+        // $request->session()->flush();
 
         return redirect('/login');
     }

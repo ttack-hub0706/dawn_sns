@@ -11,5 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/app.js', 'public/js').autoload( {
+    "jquery": [ '$', 'window.jQuery' ],
+} ).postCss( 'resources/css/app.css', 'public/css', [
+    require( 'postcss-import' ),
+    require( 'tailwindcss' ),
+    require( 'autoprefixer' ),
+] )
    .sass('resources/assets/sass/app.scss', 'public/css');

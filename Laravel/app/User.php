@@ -26,4 +26,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setAttribute($key, $value)
+    {
+      if ($key !== $this->getRememberTokenName()) {
+        parent::setAttribute($key, $value);
+      }
+    }
+
+    public function follow()
+    {
+      return $this->hasMany('App\Follow','follower_id');
+    }
+
+    public function follower()
+    {
+      return $this->hasMany('App\Follow','follow_id');
+    }
 }
